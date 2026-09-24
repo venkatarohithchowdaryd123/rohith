@@ -1,10 +1,10 @@
 # HTML CSS JavaScript Practical Programs
 
 ## Student Details
-- Student Name: _M.GOPICHAND_____________________________
-- Register Number: ___250200492________________________
-- Class / Section: ___7_________________________
-- Subject: ________WEB TECHNOLOGY___________________________
+- Student Name: D.venkata rohith 
+- Register Number: 250200029
+- Class / Section: 7
+- Subject: WEB TECHNOLOGY
 - Assignment: HTML, CSS and JavaScript Practical Programs
 
 ## Project
