@@ -2,384 +2,493 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage | JavaScript</title>
 
-<title>JavaScript Events</title>
+    <style>
 
-<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            color: #334155;
 
-html{
-    scroll-behavior:smooth;
-}
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(14, 165, 233, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(59, 130, 246, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f0f9ff,
+                    #eff6ff
+                );
+        }
 
-body{
-    background:#f5f7fb;
-    color:#172033;
-}
 
+        /* =========================
+           HEADER
+        ========================= */
 
-/* =========================
-   HERO
-========================= */
+        header {
+            position: relative;
+            overflow: hidden;
 
-header{
-    min-height:50vh;
+            text-align: center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            color: white;
 
-    text-align:center;
+            padding: 70px 20px 90px;
 
-    padding:50px 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #075985,
+                    #0284c7,
+                    #2563eb,
+                    #4f46e5
+                );
 
-    background:
-    linear-gradient(
-        135deg,
-        #9a3412,
-        #ea580c,
-        #db2777,
-        #7e22ce
-    );
+            box-shadow:
+                0 12px 35px
+                rgba(37, 99, 235, 0.25);
+        }
 
-    color:white;
-}
 
-.hero h1{
-    font-size:55px;
-    margin-bottom:15px;
-}
+        header::before,
+        header::after {
+            content: "";
 
-.hero p{
-    font-size:19px;
-    opacity:.9;
-    margin-bottom:25px;
-}
+            position: absolute;
 
-.program-count{
-    display:inline-block;
+            border-radius: 50%;
 
-    padding:10px 22px;
+            background:
+                rgba(255, 255, 255, 0.12);
+        }
 
-    border-radius:30px;
 
-    background:rgba(255,255,255,.18);
+        header::before {
+            width: 270px;
+            height: 270px;
 
-    border:1px solid rgba(255,255,255,.35);
+            top: -150px;
+            left: -80px;
+        }
 
-    font-weight:bold;
-}
 
+        header::after {
+            width: 350px;
+            height: 350px;
 
-/* =========================
-   NAVBAR
-========================= */
+            right: -140px;
+            bottom: -230px;
+        }
 
-nav{
-    position:sticky;
-    top:0;
 
-    z-index:1000;
+        header h1 {
+            position: relative;
+            z-index: 1;
 
-    background:#111827;
+            font-size:
+                clamp(38px, 6vw, 58px);
 
-    padding:15px;
+            font-weight: 800;
 
-    text-align:center;
-}
+            letter-spacing: -1px;
 
-nav a{
-    display:inline-block;
+            margin-bottom: 12px;
 
-    color:white;
+            text-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.18);
+        }
 
-    text-decoration:none;
 
-    margin:5px 8px;
+        header p {
+            position: relative;
+            z-index: 1;
 
-    padding:10px 18px;
+            font-size: 18px;
 
-    border-radius:10px;
+            color: #e0f2fe;
+        }
 
-    background:#c2410c;
 
-    font-weight:bold;
+        /* =========================
+           MAIN
+        ========================= */
 
-    transition:.3s;
-}
+        .container {
+            width: min(1180px, 92%);
 
-nav a:hover{
-    background:#db2777;
+            margin:
+                -40px auto
+                55px;
 
-    transform:translateY(-3px);
-}
+            position: relative;
 
+            z-index: 2;
+        }
 
-/* =========================
-   CONTAINER
-========================= */
 
-.container{
-    width:90%;
+        /* =========================
+           PROGRAM GRID
+        ========================= */
 
-    max-width:1200px;
+        .program-grid {
+            display: grid;
 
-    margin:60px auto;
-}
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
 
+            gap: 20px;
+        }
 
-/* =========================
-   TITLE
-========================= */
 
-.title{
-    text-align:center;
+        /* =========================
+           PROGRAM CARD
+        ========================= */
 
-    margin-bottom:40px;
-}
+        .program-card {
+            position: relative;
 
-.title h2{
-    font-size:35px;
+            overflow: hidden;
 
-    margin-bottom:10px;
+            background: white;
 
-    color:#1e293b;
-}
+            padding: 25px 22px;
 
-.title p{
-    color:#64748b;
+            border-radius: 18px;
 
-    font-size:16px;
-}
+            box-shadow:
+                0 10px 28px
+                rgba(30, 64, 175, 0.10);
 
+            border:
+                1px solid
+                #e0f2fe;
 
-/* =========================
-   PROGRAM GRID
-========================= */
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
 
-.program-grid{
 
-    display:grid;
+        .program-card::before {
+            content: "";
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+            position: absolute;
 
-    gap:25px;
-}
+            top: 0;
+            left: 0;
 
+            width: 100%;
+            height: 4px;
 
-/* =========================
-   PROGRAM CARD
-========================= */
+            background:
+                linear-gradient(
+                    90deg,
+                    #06b6d4,
+                    #2563eb,
+                    #4f46e5
+                );
+        }
 
-.program-card{
 
-    background:white;
+        .program-card:hover {
+            transform:
+                translateY(-8px);
 
-    padding:25px;
+            box-shadow:
+                0 20px 40px
+                rgba(37, 99, 235, 0.18);
+        }
 
-    border-radius:20px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
+        /* =========================
+           NUMBER
+        ========================= */
 
-    border:1px solid #e2e8f0;
+        .number {
+            width: 45px;
+            height: 45px;
 
-    transition:.35s;
+            display: flex;
 
-    position:relative;
+            align-items: center;
+            justify-content: center;
 
-    overflow:hidden;
-}
+            border-radius: 12px;
 
-.program-card::before{
+            margin-bottom: 17px;
 
-    content:"";
+            color: white;
 
-    position:absolute;
+            font-size: 16px;
 
-    top:0;
-    left:0;
+            font-weight: 800;
 
-    width:100%;
-    height:5px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0891b2,
+                    #2563eb
+                );
 
-    background:
-    linear-gradient(
-        90deg,
-        #ea580c,
-        #db2777,
-        #7e22ce
-    );
-}
+            box-shadow:
+                0 7px 16px
+                rgba(37, 99, 235, 0.20);
+        }
 
-.program-card:hover{
 
-    transform:translateY(-8px);
+        /* =========================
+           TITLE
+        ========================= */
 
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.14);
-}
+        .program-card h2 {
+            color: #1e3a8a;
 
+            font-size: 18px;
 
-/* =========================
-   NUMBER
-========================= */
+            line-height: 1.45;
 
-.number{
+            min-height: 52px;
 
-    width:50px;
-    height:50px;
+            margin-bottom: 18px;
+        }
 
-    display:flex;
 
-    align-items:center;
-    justify-content:center;
+        /* =========================
+           BUTTON
+        ========================= */
 
-    border-radius:15px;
+        .open-btn {
+            display: inline-flex;
 
-    background:
-    linear-gradient(
-        135deg,
-        #ea580c,
-        #db2777
-    );
+            align-items: center;
+            justify-content: center;
 
-    color:white;
+            gap: 7px;
 
-    font-size:18px;
+            padding:
+                10px 17px;
 
-    font-weight:bold;
+            border-radius: 9px;
 
-    margin-bottom:18px;
-}
+            color: white;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #4f46e5
+                );
 
-/* =========================
-   CARD TEXT
-========================= */
+            text-decoration: none;
 
-.program-card h3{
+            font-size: 14px;
 
-    font-size:20px;
+            font-weight: 700;
 
-    margin-bottom:12px;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
 
-    color:#1e293b;
 
-    line-height:1.4;
-}
+        .open-btn::after {
+            content: "→";
 
-.program-card p{
+            font-size: 17px;
+        }
 
-    color:#64748b;
 
-    font-size:14px;
+        .open-btn:hover {
+            transform:
+                translateY(-2px);
 
-    line-height:1.6;
+            box-shadow:
+                0 8px 18px
+                rgba(37, 99, 235, 0.30);
 
-    margin-bottom:20px;
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #0891b2,
+                    #2563eb
+                );
+        }
 
 
-/* =========================
-   OPEN BUTTON
-========================= */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-.open-btn{
+        .nav {
+            display: flex;
 
-    display:inline-block;
+            justify-content: center;
 
-    text-decoration:none;
+            gap: 15px;
 
-    padding:11px 18px;
+            flex-wrap: wrap;
 
-    border-radius:10px;
+            margin-top: 40px;
+        }
 
-    background:#c2410c;
 
-    color:white;
+        .nav-btn {
+            display: inline-flex;
 
-    font-weight:bold;
+            align-items: center;
+            justify-content: center;
 
-    font-size:14px;
+            padding:
+                12px 22px;
 
-    transition:.3s;
-}
+            border-radius: 10px;
 
-.open-btn:hover{
+            color: white;
 
-    background:#db2777;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #334155
+                );
 
-    transform:scale(1.05);
-}
+            text-decoration: none;
 
+            font-weight: 800;
 
-/* =========================
-   FOOTER
-========================= */
+            box-shadow:
+                0 8px 20px
+                rgba(15, 23, 42, 0.18);
 
-footer{
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
 
-    background:#111827;
 
-    color:white;
+        .nav-btn:hover {
+            transform:
+                translateY(-3px);
 
-    text-align:center;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0891b2,
+                    #2563eb
+                );
+        }
 
-    padding:30px;
 
-    margin-top:60px;
-}
+        /* =========================
+           FOOTER
+        ========================= */
 
-footer p{
-    margin:5px;
-}
+        footer {
+            margin-top: 55px;
 
-footer strong{
-    color:#f9a8d4;
-}
+            padding: 30px 20px;
 
+            text-align: center;
 
-/* =========================
-   MOBILE
-========================= */
+            color: #cbd5e1;
 
-@media(max-width:600px){
+            background: #0f172a;
 
-    .hero h1{
-        font-size:40px;
-    }
+            border-top:
+                4px solid #0891b2;
+        }
 
-    .hero p{
-        font-size:16px;
-    }
 
-    nav a{
-        margin:3px;
-        font-size:13px;
-    }
+        footer p {
+            font-size: 15px;
 
-    .container{
-        width:92%;
-    }
+            letter-spacing: 0.5px;
+        }
 
-    .program-grid{
-        grid-template-columns:1fr;
-    }
 
-}
+        /* =========================
+           MOBILE
+        ========================= */
 
-</style>
+        @media (max-width: 600px) {
+
+            header {
+                padding:
+                    55px 16px
+                    75px;
+            }
+
+
+            header h1 {
+                font-size: 36px;
+            }
+
+
+            header p {
+                font-size: 16px;
+            }
+
+
+            .container {
+                width: 94%;
+
+                margin-top: -28px;
+            }
+
+
+            .program-grid {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .program-card {
+                padding: 23px 20px;
+            }
+
+
+            .program-card h2 {
+                min-height: auto;
+            }
+
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+
+            .nav-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -387,721 +496,462 @@ footer strong{
 <body>
 
 
-<!-- =========================
-     HERO
-========================= -->
+    <!-- HEADER -->
 
-<header>
+    <header>
 
-    <div class="hero">
-
-        <h1>
-            JavaScript Events
-        </h1>
+        <h1>💾 Web Storage</h1>
 
         <p>
-            Explore Mouse, Keyboard, Form & Interactive Events
+            JavaScript Practical Programs • 25 Experiments
         </p>
 
-        <span class="program-count">
-            ⚡ 30 Programs
-        </span>
-
-    </div>
-
-</header>
+    </header>
 
 
-<!-- =========================
-     NAVBAR
-========================= -->
+    <!-- MAIN -->
 
-<nav>
+    <main class="container">
 
-    <a href="../../index.html">
-        🏠 Home
-    </a>
-
-    <a href="../../index.html">
-        ← JavaScript
-    </a>
-
-</nav>
+        <div class="program-grid">
 
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
+            <!-- 01 -->
 
-<main class="container">
+            <div class="program-card">
+
+                <div class="number">01</div>
+
+                <h2>Store Username</h2>
+
+                <a class="open-btn"
+                   href="storage-01-store-username.html">
+                    Open Program
+                </a>
+
+            </div>
 
 
-    <div class="title">
+            <!-- 02 -->
 
-        <h2>
-            JavaScript Event Programs
-        </h2>
+            <div class="program-card">
+
+                <div class="number">02</div>
+
+                <h2>Retrieve localStorage Data</h2>
+
+                <a class="open-btn"
+                   href="storage-02-retrieve-data.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="program-card">
+
+                <div class="number">03</div>
+
+                <h2>Update localStorage Data</h2>
+
+                <a class="open-btn"
+                   href="storage-03-update-data.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="program-card">
+
+                <div class="number">04</div>
+
+                <h2>Delete localStorage Item</h2>
+
+                <a class="open-btn"
+                   href="storage-04-delete-data.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="program-card">
+
+                <div class="number">05</div>
+
+                <h2>Clear localStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-05-clear-data.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="program-card">
+
+                <div class="number">06</div>
+
+                <h2>Store Multiple Values</h2>
+
+                <a class="open-btn"
+                   href="storage-06-multiple-values.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 07 -->
+
+            <div class="program-card">
+
+                <div class="number">07</div>
+
+                <h2>Store Array using JSON</h2>
+
+                <a class="open-btn"
+                   href="storage-07-array-json.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 08 -->
+
+            <div class="program-card">
+
+                <div class="number">08</div>
+
+                <h2>Store Object using JSON</h2>
+
+                <a class="open-btn"
+                   href="storage-08-object-json.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 09 -->
+
+            <div class="program-card">
+
+                <div class="number">09</div>
+
+                <h2>Student Record System</h2>
+
+                <a class="open-btn"
+                   href="storage-09-student-record.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 10 -->
+
+            <div class="program-card">
+
+                <div class="number">10</div>
+
+                <h2>To-Do List using localStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-10-todo-localstorage.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 11 -->
+
+            <div class="program-card">
+
+                <div class="number">11</div>
+
+                <h2>Notes using localStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-11-notes.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 12 -->
+
+            <div class="program-card">
+
+                <div class="number">12</div>
+
+                <h2>Shopping Cart using localStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-12-shopping-cart.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 13 -->
+
+            <div class="program-card">
+
+                <div class="number">13</div>
+
+                <h2>Login Preference</h2>
+
+                <a class="open-btn"
+                   href="storage-13-login-preference.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 14 -->
+
+            <div class="program-card">
+
+                <div class="number">14</div>
+
+                <h2>Dark/Light Theme Switcher</h2>
+
+                <a class="open-btn"
+                   href="storage-14-theme-switcher.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 15 -->
+
+            <div class="program-card">
+
+                <div class="number">15</div>
+
+                <h2>Preferred Font Size</h2>
+
+                <a class="open-btn"
+                   href="storage-15-font-size.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 16 -->
+
+            <div class="program-card">
+
+                <div class="number">16</div>
+
+                <h2>Recently Viewed Items</h2>
+
+                <a class="open-btn"
+                   href="storage-16-recent-items.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 17 -->
+
+            <div class="program-card">
+
+                <div class="number">17</div>
+
+                <h2>Visitor Counter</h2>
+
+                <a class="open-btn"
+                   href="storage-17-visitor-counter.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 18 -->
+
+            <div class="program-card">
+
+                <div class="number">18</div>
+
+                <h2>localStorage vs sessionStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-18-compare-storage.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 19 -->
+
+            <div class="program-card">
+
+                <div class="number">19</div>
+
+                <h2>Temporary Form Data</h2>
+
+                <a class="open-btn"
+                   href="storage-19-session-form.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 20 -->
+
+            <div class="program-card">
+
+                <div class="number">20</div>
+
+                <h2>Multi-page Form with sessionStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-20-multipage-form.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 21 -->
+
+            <div class="program-card">
+
+                <div class="number">21</div>
+
+                <h2>Auto-save Form Data</h2>
+
+                <a class="open-btn"
+                   href="storage-21-auto-save-form.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 22 -->
+
+            <div class="program-card">
+
+                <div class="number">22</div>
+
+                <h2>Restore Form Data</h2>
+
+                <a class="open-btn"
+                   href="storage-22-restore-form.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 23 -->
+
+            <div class="program-card">
+
+                <div class="number">23</div>
+
+                <h2>Persistent Shopping Cart</h2>
+
+                <a class="open-btn"
+                   href="storage-23-persistent-cart.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 24 -->
+
+            <div class="program-card">
+
+                <div class="number">24</div>
+
+                <h2>Student Marks Database</h2>
+
+                <a class="open-btn"
+                   href="storage-24-student-marks-db.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+            <!-- 25 -->
+
+            <div class="program-card">
+
+                <div class="number">25</div>
+
+                <h2>CRUD with localStorage</h2>
+
+                <a class="open-btn"
+                   href="storage-25-crud.html">
+                    Open Program
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav">
+
+            <a class="nav-btn"
+               href="../../index.html">
+
+                ← Home
+
+            </a>
+
+
+            <a class="nav-btn"
+               href="../../index.html">
+
+                ← Back to JavaScript
+
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
 
         <p>
-            Select any program to view and run the practical
+            💾 Web Storage | JavaScript Practical Programs
         </p>
 
-    </div>
-
-
-    <div class="program-grid">
-
-
-        <!-- 01 -->
-
-        <div class="program-card">
-
-            <div class="number">01</div>
-
-            <h3>onclick Event</h3>
-
-            <p>
-                Demonstrate the onclick event using JavaScript.
-            </p>
-
-            <a
-                href="event-01-onclick.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 02 -->
-
-        <div class="program-card">
-
-            <div class="number">02</div>
-
-            <h3>ondblclick Event</h3>
-
-            <p>
-                Demonstrate the double-click event.
-            </p>
-
-            <a
-                href="event-02-ondblclick.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 03 -->
-
-        <div class="program-card">
-
-            <div class="number">03</div>
-
-            <h3>mouseover and mouseout</h3>
-
-            <p>
-                Demonstrate mouseover and mouseout events.
-            </p>
-
-            <a
-                href="event-03-mouseover-out.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 04 -->
-
-        <div class="program-card">
-
-            <div class="number">04</div>
-
-            <h3>mousedown and mouseup</h3>
-
-            <p>
-                Demonstrate mouse button press and release events.
-            </p>
-
-            <a
-                href="event-04-mousedown-up.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 05 -->
-
-        <div class="program-card">
-
-            <div class="number">05</div>
-
-            <h3>mousemove Event</h3>
-
-            <p>
-                Demonstrate the mousemove event.
-            </p>
-
-            <a
-                href="event-05-mousemove.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 06 -->
-
-        <div class="program-card">
-
-            <div class="number">06</div>
-
-            <h3>keydown Event</h3>
-
-            <p>
-                Detect keyboard key presses using keydown.
-            </p>
-
-            <a
-                href="event-06-keydown.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 07 -->
-
-        <div class="program-card">
-
-            <div class="number">07</div>
-
-            <h3>keyup Event</h3>
-
-            <p>
-                Detect keyboard release using keyup.
-            </p>
-
-            <a
-                href="event-07-keyup.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 08 -->
-
-        <div class="program-card">
-
-            <div class="number">08</div>
-
-            <h3>Display Key Pressed</h3>
-
-            <p>
-                Display the key pressed by the user.
-            </p>
-
-            <a
-                href="event-08-key-pressed.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 09 -->
-
-        <div class="program-card">
-
-            <div class="number">09</div>
-
-            <h3>Keyboard Key Press Counter</h3>
-
-            <p>
-                Count keyboard key presses using JavaScript.
-            </p>
-
-            <a
-                href="event-09-key-counter.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 10 -->
-
-        <div class="program-card">
-
-            <div class="number">10</div>
-
-            <h3>Focus and Blur</h3>
-
-            <p>
-                Demonstrate focus and blur events.
-            </p>
-
-            <a
-                href="event-10-focus-blur.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 11 -->
-
-        <div class="program-card">
-
-            <div class="number">11</div>
-
-            <h3>change Event</h3>
-
-            <p>
-                Demonstrate the change event.
-            </p>
-
-            <a
-                href="event-11-change.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 12 -->
-
-        <div class="program-card">
-
-            <div class="number">12</div>
-
-            <h3>input Event</h3>
-
-            <p>
-                Demonstrate the input event.
-            </p>
-
-            <a
-                href="event-12-input.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 13 -->
-
-        <div class="program-card">
-
-            <div class="number">13</div>
-
-            <h3>submit Event</h3>
-
-            <p>
-                Demonstrate form submission events.
-            </p>
-
-            <a
-                href="event-13-submit.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 14 -->
-
-        <div class="program-card">
-
-            <div class="number">14</div>
-
-            <h3>reset Event</h3>
-
-            <p>
-                Demonstrate the form reset event.
-            </p>
-
-            <a
-                href="event-14-reset.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 15 -->
-
-        <div class="program-card">
-
-            <div class="number">15</div>
-
-            <h3>Button Background Change</h3>
-
-            <p>
-                Change background color using an event.
-            </p>
-
-            <a
-                href="event-15-bg-button.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 16 -->
-
-        <div class="program-card">
-
-            <div class="number">16</div>
-
-            <h3>Dynamic Font Size</h3>
-
-            <p>
-                Change font size dynamically using events.
-            </p>
-
-            <a
-                href="event-16-font-size.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 17 -->
-
-        <div class="program-card">
-
-            <div class="number">17</div>
-
-            <h3>Multiple Buttons and Handlers</h3>
-
-            <p>
-                Create multiple buttons with event handlers.
-            </p>
-
-            <a
-                href="event-17-multiple-buttons.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 18 -->
-
-        <div class="program-card">
-
-            <div class="number">18</div>
-
-            <h3>addEventListener</h3>
-
-            <p>
-                Demonstrate addEventListener().
-            </p>
-
-            <a
-                href="event-18-add-event-listener.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 19 -->
-
-        <div class="program-card">
-
-            <div class="number">19</div>
-
-            <h3>Multiple Event Listeners</h3>
-
-            <p>
-                Add multiple event listeners to an element.
-            </p>
-
-            <a
-                href="event-19-multiple-listeners.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 20 -->
-
-        <div class="program-card">
-
-            <div class="number">20</div>
-
-            <h3>removeEventListener</h3>
-
-            <p>
-                Remove an event listener using JavaScript.
-            </p>
-
-            <a
-                href="event-20-remove-event-listener.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 21 -->
-
-        <div class="program-card">
-
-            <div class="number">21</div>
-
-            <h3>Event Bubbling</h3>
-
-            <p>
-                Demonstrate event bubbling.
-            </p>
-
-            <a
-                href="event-21-bubbling.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 22 -->
-
-        <div class="program-card">
-
-            <div class="number">22</div>
-
-            <h3>Event Capturing</h3>
-
-            <p>
-                Demonstrate event capturing.
-            </p>
-
-            <a
-                href="event-22-capturing.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 23 -->
-
-        <div class="program-card">
-
-            <div class="number">23</div>
-
-            <h3>Event Delegation</h3>
-
-            <p>
-                Demonstrate event delegation.
-            </p>
-
-            <a
-                href="event-23-delegation.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 24 -->
-
-        <div class="program-card">
-
-            <div class="number">24</div>
-
-            <h3>Drag and Drop</h3>
-
-            <p>
-                Create a drag-and-drop application.
-            </p>
-
-            <a
-                href="event-24-drag-drop.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 25 -->
-
-        <div class="program-card">
-
-            <div class="number">25</div>
-
-            <h3>Mouse Coordinate Tracker</h3>
-
-            <p>
-                Track the mouse pointer coordinates.
-            </p>
-
-            <a
-                href="event-25-mouse-coordinates.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 26 -->
-
-        <div class="program-card">
-
-            <div class="number">26</div>
-
-            <h3>Keyboard Controlled Moving Object</h3>
-
-            <p>
-                Control an object using keyboard events.
-            </p>
-
-            <a
-                href="event-26-keyboard-moving-object.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 27 -->
-
-        <div class="program-card">
-
-            <div class="number">27</div>
-
-            <h3>Click Counter</h3>
-
-            <p>
-                Count button clicks using JavaScript.
-            </p>
-
-            <a
-                href="event-27-click-counter.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 28 -->
-
-        <div class="program-card">
-
-            <div class="number">28</div>
-
-            <h3>Double Click Counter</h3>
-
-            <p>
-                Count double-click events.
-            </p>
-
-            <a
-                href="event-28-double-click-counter.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 29 -->
-
-        <div class="program-card">
-
-            <div class="number">29</div>
-
-            <h3>Reaction Time Game</h3>
-
-            <p>
-                Create a simple reaction-time game.
-            </p>
-
-            <a
-                href="event-29-reaction-game.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 30 -->
-
-        <div class="program-card">
-
-            <div class="number">30</div>
-
-            <h3>Keyboard Typing Test</h3>
-
-            <p>
-                Create a simple keyboard typing test.
-            </p>
-
-            <a
-                href="event-30-typing-test.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-    </div>
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        <strong>JavaScript Practical Laboratory</strong>
-    </p>
-
-    <p>
-        Events • Mouse • Keyboard • Forms • Interaction
-    </p>
-
-</footer>
+    </footer>
 
 
 </body>
