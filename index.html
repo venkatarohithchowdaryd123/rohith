@@ -6,13 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JavaScript Programs</title>
+<title>JavaScript Events</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     margin:0;
@@ -26,7 +22,7 @@ html{
 }
 
 body{
-    background:#f4f7fb;
+    background:#f5f7fb;
     color:#172033;
 }
 
@@ -49,10 +45,10 @@ header{
     background:
     linear-gradient(
         135deg,
-        #4c1d95,
-        #7e22ce,
-        #c026d3,
-        #db2777
+        #9a3412,
+        #ea580c,
+        #db2777,
+        #7e22ce
     );
 
     color:white;
@@ -72,7 +68,7 @@ header{
 .program-count{
     display:inline-block;
 
-    padding:10px 20px;
+    padding:10px 22px;
 
     border-radius:30px;
 
@@ -114,7 +110,7 @@ nav a{
 
     border-radius:10px;
 
-    background:#4c1d95;
+    background:#c2410c;
 
     font-weight:bold;
 
@@ -156,7 +152,7 @@ nav a:hover{
 
     margin-bottom:10px;
 
-    color:#1e1b4b;
+    color:#1e293b;
 }
 
 .title p{
@@ -196,7 +192,7 @@ nav a:hover{
     box-shadow:
     0 10px 30px rgba(0,0,0,.08);
 
-    border:1px solid #e5e7eb;
+    border:1px solid #e2e8f0;
 
     transition:.35s;
 
@@ -220,8 +216,9 @@ nav a:hover{
     background:
     linear-gradient(
         90deg,
-        #7e22ce,
-        #db2777
+        #ea580c,
+        #db2777,
+        #7e22ce
     );
 }
 
@@ -253,7 +250,7 @@ nav a:hover{
     background:
     linear-gradient(
         135deg,
-        #7e22ce,
+        #ea580c,
         #db2777
     );
 
@@ -277,7 +274,7 @@ nav a:hover{
 
     margin-bottom:12px;
 
-    color:#1e1b4b;
+    color:#1e293b;
 
     line-height:1.4;
 }
@@ -308,7 +305,7 @@ nav a:hover{
 
     border-radius:10px;
 
-    background:#4c1d95;
+    background:#c2410c;
 
     color:white;
 
@@ -348,6 +345,10 @@ footer p{
     margin:5px;
 }
 
+footer strong{
+    color:#f9a8d4;
+}
+
 
 /* =========================
    MOBILE
@@ -356,7 +357,7 @@ footer p{
 @media(max-width:600px){
 
     .hero h1{
-        font-size:38px;
+        font-size:40px;
     }
 
     .hero p{
@@ -386,20 +387,24 @@ footer p{
 <body>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header>
 
     <div class="hero">
 
-        <h1>JavaScript Programs</h1>
+        <h1>
+            JavaScript Events
+        </h1>
 
         <p>
-            JavaScript Practical Laboratory
+            Explore Mouse, Keyboard, Form & Interactive Events
         </p>
 
         <span class="program-count">
-            ⚡ 67 Programs
+            ⚡ 30 Programs
         </span>
 
     </div>
@@ -407,7 +412,9 @@ footer p{
 </header>
 
 
-<!-- ================= NAV ================= -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav>
 
@@ -422,7 +429,9 @@ footer p{
 </nav>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 
 <main class="container">
 
@@ -430,11 +439,11 @@ footer p{
     <div class="title">
 
         <h2>
-            JavaScript Practical Programs
+            JavaScript Event Programs
         </h2>
 
         <p>
-            Select any program to view the code
+            Select any program to view and run the practical
         </p>
 
     </div>
@@ -443,710 +452,20 @@ footer p{
     <div class="program-grid">
 
 
-        <!-- 38 -->
-
-        <div class="program-card">
-
-            <div class="number">38</div>
-
-            <h3>
-                ES6 let, const, Template Literals and Destructuring
-            </h3>
-
-            <p>
-                Demonstrate modern ES6 JavaScript features.
-            </p>
-
-            <a
-                href="js-38-es6-let-const-template-destructuring.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 39 -->
-
-        <div class="program-card">
-
-            <div class="number">39</div>
-
-            <h3>
-                Spread and Rest Operators
-            </h3>
-
-            <p>
-                Demonstrate spread and rest operators.
-            </p>
-
-            <a
-                href="js-39-spread-rest.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 40 -->
-
-        <div class="program-card">
-
-            <div class="number">40</div>
-
-            <h3>
-                Classes and Objects
-            </h3>
-
-            <p>
-                Demonstrate classes and objects in JavaScript.
-            </p>
-
-            <a
-                href="js-40-classes-objects.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 41 -->
-
-        <div class="program-card">
-
-            <div class="number">41</div>
-
-            <h3>
-                Inheritance
-            </h3>
-
-            <p>
-                Demonstrate inheritance using JavaScript classes.
-            </p>
-
-            <a
-                href="js-41-inheritance.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 42 -->
-
-        <div class="program-card">
-
-            <div class="number">42</div>
-
-            <h3>
-                Callbacks, Promises and Async/Await
-            </h3>
-
-            <p>
-                Demonstrate asynchronous JavaScript concepts.
-            </p>
-
-            <a
-                href="js-42-callbacks-promises-async.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 43 -->
-
-        <div class="program-card">
-
-            <div class="number">43</div>
-
-            <h3>
-                Fetch API
-            </h3>
-
-            <p>
-                Fetch and process data using the Fetch API.
-            </p>
-
-            <a
-                href="js-43-fetch-api.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 44 -->
-
-        <div class="program-card">
-
-            <div class="number">44</div>
-
-            <h3>
-                Display API Data Dynamically
-            </h3>
-
-            <p>
-                Display fetched API data dynamically.
-            </p>
-
-            <a
-                href="js-44-display-api-data.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 45 -->
-
-        <div class="program-card">
-
-            <div class="number">45</div>
-
-            <h3>
-                localStorage
-            </h3>
-
-            <p>
-                Store and retrieve browser data using localStorage.
-            </p>
-
-            <a
-                href="js-45-localstorage.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 46 -->
-
-        <div class="program-card">
-
-            <div class="number">46</div>
-
-            <h3>
-                Responsive Login Form
-            </h3>
-
-            <p>
-                Create a responsive login form with validation.
-            </p>
-
-            <a
-                href="js-46-responsive-login.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 47 -->
-
-        <div class="program-card">
-
-            <div class="number">47</div>
-
-            <h3>
-                Complete Interactive Webpage
-            </h3>
-
-            <p>
-                Build an interactive webpage using JavaScript.
-            </p>
-
-            <a
-                href="js-47-interactive-webpage.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 48 -->
-
-        <div class="program-card">
-
-            <div class="number">48</div>
-
-            <h3>
-                Swap Two Numbers
-            </h3>
-
-            <p>
-                JavaScript program to swap two numbers.
-            </p>
-
-            <a
-                href="js-48-swap-two-numbers.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 49 -->
-
-        <div class="program-card">
-
-            <div class="number">49</div>
-
-            <h3>
-                Greatest Common Divisor (GCD)
-            </h3>
-
-            <p>
-                Find the GCD of two numbers.
-            </p>
-
-            <a
-                href="js-49-gcd.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 50 -->
-
-        <div class="program-card">
-
-            <div class="number">50</div>
-
-            <h3>
-                Least Common Multiple (LCM)
-            </h3>
-
-            <p>
-                Find the LCM of two numbers.
-            </p>
-
-            <a
-                href="js-50-lcm.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 51 -->
-
-        <div class="program-card">
-
-            <div class="number">51</div>
-
-            <h3>
-                Armstrong Number
-            </h3>
-
-            <p>
-                Check whether a number is an Armstrong number.
-            </p>
-
-            <a
-                href="js-51-armstrong.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 52 -->
-
-        <div class="program-card">
-
-            <div class="number">52</div>
-
-            <h3>
-                Perfect Number
-            </h3>
-
-            <p>
-                Check whether a number is a perfect number.
-            </p>
-
-            <a
-                href="js-52-perfect-number.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 53 -->
-
-        <div class="program-card">
-
-            <div class="number">53</div>
-
-            <h3>
-                Multiplication Table
-            </h3>
-
-            <p>
-                Generate the multiplication table of a number.
-            </p>
-
-            <a
-                href="js-53-multiplication-table.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 54 -->
-
-        <div class="program-card">
-
-            <div class="number">54</div>
-
-            <h3>
-                Power of a Number
-            </h3>
-
-            <p>
-                Calculate the power of a given number.
-            </p>
-
-            <a
-                href="js-54-power.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 55 -->
-
-        <div class="program-card">
-
-            <div class="number">55</div>
-
-            <h3>
-                Count Number of Digits
-            </h3>
-
-            <p>
-                Count the number of digits in a number.
-            </p>
-
-            <a
-                href="js-55-count-digits.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 56 -->
-
-        <div class="program-card">
-
-            <div class="number">56</div>
-
-            <h3>
-                Second-Largest Element
-            </h3>
-
-            <p>
-                Find the second-largest element in an array.
-            </p>
-
-            <a
-                href="js-56-second-largest.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 57 -->
-
-        <div class="program-card">
-
-            <div class="number">57</div>
-
-            <h3>
-                Remove Duplicate Array Elements
-            </h3>
-
-            <p>
-                Remove duplicate values from an array.
-            </p>
-
-            <a
-                href="js-57-remove-duplicates.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 58 -->
-
-        <div class="program-card">
-
-            <div class="number">58</div>
-
-            <h3>
-                Merge Two Arrays
-            </h3>
-
-            <p>
-                Merge two JavaScript arrays.
-            </p>
-
-            <a
-                href="js-58-merge-arrays.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 59 -->
-
-        <div class="program-card">
-
-            <div class="number">59</div>
-
-            <h3>
-                Frequency of Array Elements
-            </h3>
-
-            <p>
-                Find the frequency of elements in an array.
-            </p>
-
-            <a
-                href="js-59-array-frequency.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 60 -->
-
-        <div class="program-card">
-
-            <div class="number">60</div>
-
-            <h3>
-                Common Elements in Two Arrays
-            </h3>
-
-            <p>
-                Find common elements between two arrays.
-            </p>
-
-            <a
-                href="js-60-common-array-elements.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 61 -->
-
-        <div class="program-card">
-
-            <div class="number">61</div>
-
-            <h3>
-                Reverse a String
-            </h3>
-
-            <p>
-                Reverse a given string using JavaScript.
-            </p>
-
-            <a
-                href="js-61-reverse-string.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 62 -->
-
-        <div class="program-card">
-
-            <div class="number">62</div>
-
-            <h3>
-                String Palindrome
-            </h3>
-
-            <p>
-                Check whether a string is a palindrome.
-            </p>
-
-            <a
-                href="js-62-string-palindrome.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 63 -->
-
-        <div class="program-card">
-
-            <div class="number">63</div>
-
-            <h3>
-                Count Vowels and Consonants
-            </h3>
-
-            <p>
-                Count vowels and consonants in a string.
-            </p>
-
-            <a
-                href="js-63-vowels-consonants.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 64 -->
-
-        <div class="program-card">
-
-            <div class="number">64</div>
-
-            <h3>
-                Count Words in a String
-            </h3>
-
-            <p>
-                Count the number of words in a string.
-            </p>
-
-            <a
-                href="js-64-count-words.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 65 -->
-
-        <div class="program-card">
-
-            <div class="number">65</div>
-
-            <h3>
-                Character Frequency
-            </h3>
-
-            <p>
-                Find the frequency of characters in a string.
-            </p>
-
-            <a
-                href="js-65-character-frequency.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 66 -->
-
-        <div class="program-card">
-
-            <div class="number">66</div>
-
-            <h3>
-                Regular Expressions
-            </h3>
-
-            <p>
-                Demonstrate regular expressions in JavaScript.
-            </p>
-
-            <a
-                href="js-66-regex.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 67 -->
-
-        <div class="program-card">
-
-            <div class="number">67</div>
-
-            <h3>
-                Email Validation with Regular Expression
-            </h3>
-
-            <p>
-                Validate an email using regular expressions.
-            </p>
-
-            <a
-                href="js-67-email-regex.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
         <!-- 01 -->
 
         <div class="program-card">
 
             <div class="number">01</div>
 
-            <h3>Hello World</h3>
+            <h3>onclick Event</h3>
 
             <p>
-                Display Hello World using JavaScript.
+                Demonstrate the onclick event using JavaScript.
             </p>
 
             <a
-                href="js-01-hello-world.html"
+                href="event-01-onclick.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1160,14 +479,14 @@ footer p{
 
             <div class="number">02</div>
 
-            <h3>Arithmetic Operations</h3>
+            <h3>ondblclick Event</h3>
 
             <p>
-                Perform arithmetic operations using JavaScript.
+                Demonstrate the double-click event.
             </p>
 
             <a
-                href="js-02-arithmetic.html"
+                href="event-02-ondblclick.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1181,14 +500,14 @@ footer p{
 
             <div class="number">03</div>
 
-            <h3>Largest of Three Numbers</h3>
+            <h3>mouseover and mouseout</h3>
 
             <p>
-                Find the largest among three numbers.
+                Demonstrate mouseover and mouseout events.
             </p>
 
             <a
-                href="js-03-largest-three.html"
+                href="event-03-mouseover-out.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1202,14 +521,14 @@ footer p{
 
             <div class="number">04</div>
 
-            <h3>Even or Odd</h3>
+            <h3>mousedown and mouseup</h3>
 
             <p>
-                Check whether a number is even or odd.
+                Demonstrate mouse button press and release events.
             </p>
 
             <a
-                href="js-04-even-odd.html"
+                href="event-04-mousedown-up.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1223,14 +542,14 @@ footer p{
 
             <div class="number">05</div>
 
-            <h3>Positive, Negative or Zero</h3>
+            <h3>mousemove Event</h3>
 
             <p>
-                Check the type of a given number.
+                Demonstrate the mousemove event.
             </p>
 
             <a
-                href="js-05-positive-negative-zero.html"
+                href="event-05-mousemove.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1244,14 +563,14 @@ footer p{
 
             <div class="number">06</div>
 
-            <h3>Factorial</h3>
+            <h3>keydown Event</h3>
 
             <p>
-                Calculate the factorial of a number.
+                Detect keyboard key presses using keydown.
             </p>
 
             <a
-                href="js-06-factorial.html"
+                href="event-06-keydown.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1265,14 +584,14 @@ footer p{
 
             <div class="number">07</div>
 
-            <h3>Fibonacci Series</h3>
+            <h3>keyup Event</h3>
 
             <p>
-                Generate the Fibonacci series.
+                Detect keyboard release using keyup.
             </p>
 
             <a
-                href="js-07-fibonacci.html"
+                href="event-07-keyup.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1286,14 +605,14 @@ footer p{
 
             <div class="number">08</div>
 
-            <h3>Prime Number</h3>
+            <h3>Display Key Pressed</h3>
 
             <p>
-                Check whether a number is prime.
+                Display the key pressed by the user.
             </p>
 
             <a
-                href="js-08-prime.html"
+                href="event-08-key-pressed.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1307,14 +626,14 @@ footer p{
 
             <div class="number">09</div>
 
-            <h3>Number Palindrome</h3>
+            <h3>Keyboard Key Press Counter</h3>
 
             <p>
-                Check whether a number is a palindrome.
+                Count keyboard key presses using JavaScript.
             </p>
 
             <a
-                href="js-09-palindrome-number.html"
+                href="event-09-key-counter.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1328,14 +647,14 @@ footer p{
 
             <div class="number">10</div>
 
-            <h3>Reverse a Number</h3>
+            <h3>Focus and Blur</h3>
 
             <p>
-                Reverse the digits of a number.
+                Demonstrate focus and blur events.
             </p>
 
             <a
-                href="js-10-reverse-number.html"
+                href="event-10-focus-blur.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1349,14 +668,14 @@ footer p{
 
             <div class="number">11</div>
 
-            <h3>Sum of Digits</h3>
+            <h3>change Event</h3>
 
             <p>
-                Find the sum of digits of a number.
+                Demonstrate the change event.
             </p>
 
             <a
-                href="js-11-sum-digits.html"
+                href="event-11-change.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1370,14 +689,14 @@ footer p{
 
             <div class="number">12</div>
 
-            <h3>Largest and Smallest in Array</h3>
+            <h3>input Event</h3>
 
             <p>
-                Find largest and smallest array elements.
+                Demonstrate the input event.
             </p>
 
             <a
-                href="js-12-array-largest-smallest.html"
+                href="event-12-input.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1391,14 +710,14 @@ footer p{
 
             <div class="number">13</div>
 
-            <h3>Sort an Array</h3>
+            <h3>submit Event</h3>
 
             <p>
-                Sort array elements using JavaScript.
+                Demonstrate form submission events.
             </p>
 
             <a
-                href="js-13-array-sort.html"
+                href="event-13-submit.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1412,14 +731,14 @@ footer p{
 
             <div class="number">14</div>
 
-            <h3>Array Sum and Average</h3>
+            <h3>reset Event</h3>
 
             <p>
-                Calculate sum and average of array elements.
+                Demonstrate the form reset event.
             </p>
 
             <a
-                href="js-14-array-sum-average.html"
+                href="event-14-reset.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1433,14 +752,14 @@ footer p{
 
             <div class="number">15</div>
 
-            <h3>JavaScript Functions</h3>
+            <h3>Button Background Change</h3>
 
             <p>
-                Demonstrate JavaScript functions.
+                Change background color using an event.
             </p>
 
             <a
-                href="js-15-functions.html"
+                href="event-15-bg-button.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1454,14 +773,14 @@ footer p{
 
             <div class="number">16</div>
 
-            <h3>Arrow Functions</h3>
+            <h3>Dynamic Font Size</h3>
 
             <p>
-                Demonstrate arrow functions.
+                Change font size dynamically using events.
             </p>
 
             <a
-                href="js-16-arrow-functions.html"
+                href="event-16-font-size.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1475,14 +794,14 @@ footer p{
 
             <div class="number">17</div>
 
-            <h3>Strings and String Methods</h3>
+            <h3>Multiple Buttons and Handlers</h3>
 
             <p>
-                Demonstrate strings and string methods.
+                Create multiple buttons with event handlers.
             </p>
 
             <a
-                href="js-17-strings-methods.html"
+                href="event-17-multiple-buttons.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1496,14 +815,14 @@ footer p{
 
             <div class="number">18</div>
 
-            <h3>Arrays and Array Methods</h3>
+            <h3>addEventListener</h3>
 
             <p>
-                Demonstrate arrays and array methods.
+                Demonstrate addEventListener().
             </p>
 
             <a
-                href="js-18-arrays-methods.html"
+                href="event-18-add-event-listener.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1517,14 +836,14 @@ footer p{
 
             <div class="number">19</div>
 
-            <h3>Objects in JavaScript</h3>
+            <h3>Multiple Event Listeners</h3>
 
             <p>
-                Demonstrate JavaScript objects.
+                Add multiple event listeners to an element.
             </p>
 
             <a
-                href="js-19-objects.html"
+                href="event-19-multiple-listeners.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1538,14 +857,14 @@ footer p{
 
             <div class="number">20</div>
 
-            <h3>Date and Math Objects</h3>
+            <h3>removeEventListener</h3>
 
             <p>
-                Demonstrate Date and Math objects.
+                Remove an event listener using JavaScript.
             </p>
 
             <a
-                href="js-20-date-math.html"
+                href="event-20-remove-event-listener.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1559,14 +878,14 @@ footer p{
 
             <div class="number">21</div>
 
-            <h3>DOM & Event-Based Experiments</h3>
+            <h3>Event Bubbling</h3>
 
             <p>
-                Introduction to DOM and events.
+                Demonstrate event bubbling.
             </p>
 
             <a
-                href="js-21-dom-event-intro.html"
+                href="event-21-bubbling.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1580,14 +899,14 @@ footer p{
 
             <div class="number">22</div>
 
-            <h3>Change Text</h3>
+            <h3>Event Capturing</h3>
 
             <p>
-                Change webpage text using JavaScript.
+                Demonstrate event capturing.
             </p>
 
             <a
-                href="js-22-change-text.html"
+                href="event-22-capturing.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1601,14 +920,14 @@ footer p{
 
             <div class="number">23</div>
 
-            <h3>Change Background Color</h3>
+            <h3>Event Delegation</h3>
 
             <p>
-                Change webpage background color.
+                Demonstrate event delegation.
             </p>
 
             <a
-                href="js-23-change-background.html"
+                href="event-23-delegation.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1622,14 +941,14 @@ footer p{
 
             <div class="number">24</div>
 
-            <h3>Button Click Event</h3>
+            <h3>Drag and Drop</h3>
 
             <p>
-                Create a button click event.
+                Create a drag-and-drop application.
             </p>
 
             <a
-                href="js-24-button-click.html"
+                href="event-24-drag-drop.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1643,14 +962,14 @@ footer p{
 
             <div class="number">25</div>
 
-            <h3>Show and Hide Element</h3>
+            <h3>Mouse Coordinate Tracker</h3>
 
             <p>
-                Show or hide an HTML element.
+                Track the mouse pointer coordinates.
             </p>
 
             <a
-                href="js-25-show-hide.html"
+                href="event-25-mouse-coordinates.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1664,14 +983,14 @@ footer p{
 
             <div class="number">26</div>
 
-            <h3>Change Image on Button Click</h3>
+            <h3>Keyboard Controlled Moving Object</h3>
 
             <p>
-                Change an image using a button.
+                Control an object using keyboard events.
             </p>
 
             <a
-                href="js-26-change-image.html"
+                href="event-26-keyboard-moving-object.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1685,14 +1004,14 @@ footer p{
 
             <div class="number">27</div>
 
-            <h3>Digital Clock</h3>
+            <h3>Click Counter</h3>
 
             <p>
-                Create a digital clock using JavaScript.
+                Count button clicks using JavaScript.
             </p>
 
             <a
-                href="js-27-digital-clock.html"
+                href="event-27-click-counter.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1706,14 +1025,14 @@ footer p{
 
             <div class="number">28</div>
 
-            <h3>Simple Calculator</h3>
+            <h3>Double Click Counter</h3>
 
             <p>
-                Create a simple calculator.
+                Count double-click events.
             </p>
 
             <a
-                href="js-28-simple-calculator.html"
+                href="event-28-double-click-counter.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1727,14 +1046,14 @@ footer p{
 
             <div class="number">29</div>
 
-            <h3>Number Guessing Game</h3>
+            <h3>Reaction Time Game</h3>
 
             <p>
-                Create a number guessing game.
+                Create a simple reaction-time game.
             </p>
 
             <a
-                href="js-29-number-guessing.html"
+                href="event-29-reaction-game.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1748,161 +1067,14 @@ footer p{
 
             <div class="number">30</div>
 
-            <h3>Form Validation</h3>
+            <h3>Keyboard Typing Test</h3>
 
             <p>
-                Validate form inputs using JavaScript.
+                Create a simple keyboard typing test.
             </p>
 
             <a
-                href="js-30-form-validation.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 31 -->
-
-        <div class="program-card">
-
-            <div class="number">31</div>
-
-            <h3>Validate Name Email Phone Password</h3>
-
-            <p>
-                Validate common form fields.
-            </p>
-
-            <a
-                href="js-31-validate-fields.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 32 -->
-
-        <div class="program-card">
-
-            <div class="number">32</div>
-
-            <h3>To-Do List</h3>
-
-            <p>
-                Create a simple to-do list.
-            </p>
-
-            <a
-                href="js-32-todo-list.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 33 -->
-
-        <div class="program-card">
-
-            <div class="number">33</div>
-
-            <h3>Quiz Application</h3>
-
-            <p>
-                Create a simple quiz application.
-            </p>
-
-            <a
-                href="js-33-quiz.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 34 -->
-
-        <div class="program-card">
-
-            <div class="number">34</div>
-
-            <h3>Counter Application</h3>
-
-            <p>
-                Create an increment and decrement counter.
-            </p>
-
-            <a
-                href="js-34-counter.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 35 -->
-
-        <div class="program-card">
-
-            <div class="number">35</div>
-
-            <h3>Stopwatch</h3>
-
-            <p>
-                Create a stopwatch using JavaScript.
-            </p>
-
-            <a
-                href="js-35-stopwatch.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 36 -->
-
-        <div class="program-card">
-
-            <div class="number">36</div>
-
-            <h3>Countdown Timer</h3>
-
-            <p>
-                Create a countdown timer.
-            </p>
-
-            <a
-                href="js-36-countdown.html"
-                class="open-btn">
-                Open Program →
-            </a>
-
-        </div>
-
-
-        <!-- 37 -->
-
-        <div class="program-card">
-
-            <div class="number">37</div>
-
-            <h3>Advanced JavaScript Lab Questions</h3>
-
-            <p>
-                Advanced JavaScript practical questions.
-            </p>
-
-            <a
-                href="js-37-advanced-lab.html"
+                href="event-30-typing-test.html"
                 class="open-btn">
                 Open Program →
             </a>
@@ -1912,11 +1084,12 @@ footer p{
 
     </div>
 
-
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1925,11 +1098,12 @@ footer p{
     </p>
 
     <p>
-        JavaScript • DOM • Events • Forms • Browser • Storage
+        Events • Mouse • Keyboard • Forms • Interaction
     </p>
 
 </footer>
 
 
 </body>
+
 </html>
